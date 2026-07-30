@@ -1,0 +1,13 @@
+services:
+  backend:
+    build:
+      context: .
+    volumes:
+      - ./app:/srv/app
+      - ../add-ai-core:/add-ai-core
+      - storage:/data/storage
+    command: >
+      sh -c "pip install -e /add-ai-core &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+volumes:
+  storage:

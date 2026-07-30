@@ -1,0 +1,15 @@
+# Exclude environment and local config files
+.env
+.env.*
+
+# Exclude logs and data from the Docker image
+*.log
+debug.log
+logs/
+data/
+
+# Exclude version control and development files
+.git
+.gitignore
+README.md
+Dockerfile
